@@ -32,7 +32,9 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - port: 5000 # minikube service lb-service --url to get the url of load balancer
+  # or just port forwarding kubectl port-forward service/lb-service 5000:5000 & 
+  # & is for running in background
     targetPort: 5000
   selector:
     app: flaskdemo
